@@ -1,13 +1,30 @@
 <html xmlns:th="https:www.thymeleaf.org">
 
 <head>
-<title> Thymeleaf Example</title>
+	<title> Thymeleaf Example</title>
 </head>
 
 <body>
-<h3> Welcome to first thymeleaf Application</h3>
-your data is : <span th:text="${eid}"></span> <span th:text="${ename}"></span>
-<span th:text="${esal}"></span>
+	<h3> Welcome to first thymeleaf Application</h3>
+	your data is : <span th:text="${eid}"></span> <span th:text="${empName}"></span>
+	<span th:text="${esal}"></span>
+	<hr>
+	your data is : <span th:text="${eob}"></span>
+	<hr/>
+			  
+			  <table border="1">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>DEPT</th>
+			</tr>
+			<tr th:each="ob:${list}">
+				<td>[[${ob.empid}]]</td>
+				<td>[[${ob.empName}]]</td>
+				<td>[[${ob.dept}]]</td>
+			</tr>
+		</table>
+
 </body>
 
 </html>
